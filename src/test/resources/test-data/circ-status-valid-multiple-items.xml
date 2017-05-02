@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<circ-status>
+<item-data>
+<z30-description></z30-description>
+<loan-status>General coll.</loan-status>
+<due-date>On Shelf</due-date>
+<due-hour></due-hour>
+<sub-library>UMCP Art Library</sub-library>
+<collection>Folio</collection>
+<location>ND623.M6 C58 1990</location>
+<pages></pages>
+<no-requests></no-requests>
+<location-2></location-2>
+<barcode>31430030992236</barcode>
+<opac-note></opac-note>
+</item-data>
+<item-data>
+<z30-description></z30-description>
+<loan-status>General coll.</loan-status>
+<due-date>On Shelf</due-date>
+<due-hour></due-hour>
+<sub-library>St. Mary&apos;s College of Maryland</sub-library>
+<collection>Oversize</collection>
+<location>ND623.M6 C58 1990</location>
+<pages></pages>
+<no-requests></no-requests>
+<location-2></location-2>
+<barcode>33127001186305</barcode>
+<opac-note></opac-note>
+</item-data>
+<session-id>76G7MA6BPUG18PPLMLPS24P1UX69LRDSU62K1C5MSG3USC7LBN</session-id>
+</circ-status>
