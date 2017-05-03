@@ -25,7 +25,7 @@ public interface JaxbAlephOp<T> {
    *          the GET query parameters to include in the request.
    * @param unmarshaller
    *          the JAXB unmarshaller to use in handling the XML response
-   * @return the unmarshalled object from the XML reponse from the server.
+   * @return the unmarshalled object from the XML response from the server.
    * @throws JAXBException
    *           if a JAXB exception occurs
    */

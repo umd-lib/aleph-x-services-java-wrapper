@@ -72,9 +72,6 @@ public class JaxbAlephOpImplTest extends JerseyTest {
     // Create unmarshaller
     Unmarshaller unmarshaller = ctx.createUnmarshaller();
 
-    MapAdapter mapAdapter = new MapAdapter();
-    unmarshaller.setAdapter(mapAdapter);
-
     ReadItem readItem = alephOp.request(webTargetMock, queryParams, unmarshaller);
     assertEquals("HYITNCE7LYPH46E8LXSFVUKVTR3NHIX8T1XCDTDYKUEV6PLNSG", readItem.getSessionId());
   }
