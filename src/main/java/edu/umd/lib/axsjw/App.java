@@ -13,17 +13,20 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.glassfish.jersey.client.ClientConfig;
 
+import edu.umd.lib.axsjw.jaxb.MapAdapter;
+import edu.umd.lib.axsjw.jaxb.ReadItem;
 import edu.umd.lib.axsjw.net.JaxbAlephOp;
 import edu.umd.lib.axsjw.net.impl.JaxbAlephOpImpl;
 
 public class App {
   public static final void main(String[] args) {
     Client client = ClientBuilder.newClient(new ClientConfig());
+
     WebTarget webTarget = client.target("http://alephdev.lib.umd.edu:80/X");
 
     try {
       // Create context
-      JAXBContext ctx = JAXBContext.newInstance(ReadItem.class, CircStatus.class);
+      JAXBContext ctx = JAXBContext.newInstance("edu.umd.lib.axsjw.jaxb");
 
       // Create unmarshaller
       Unmarshaller unmarshaller = ctx.createUnmarshaller();

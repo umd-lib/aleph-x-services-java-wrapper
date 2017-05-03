@@ -1,4 +1,4 @@
-package edu.umd.lib.axsjw;
+package edu.umd.lib.axsjw.jaxb;
 
 import java.util.ArrayList;
 import java.util.HashMap;

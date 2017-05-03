@@ -29,9 +29,9 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 import org.mockito.quality.Strictness;
 
-import edu.umd.lib.axsjw.CircStatus;
-import edu.umd.lib.axsjw.MapAdapter;
-import edu.umd.lib.axsjw.ReadItem;
+import edu.umd.lib.axsjw.jaxb.CircStatus;
+import edu.umd.lib.axsjw.jaxb.MapAdapter;
+import edu.umd.lib.axsjw.jaxb.ReadItem;
 import edu.umd.lib.axsjw.net.JaxbAlephOp;
 
 public class JaxbAlephOpImplTest extends JerseyTest {
@@ -67,7 +67,7 @@ public class JaxbAlephOpImplTest extends JerseyTest {
     Map<String, String> queryParams = new HashMap<>();
 
     // Create context
-    JAXBContext ctx = JAXBContext.newInstance(ReadItem.class, CircStatus.class);
+    JAXBContext ctx = JAXBContext.newInstance("edu.umd.lib.axsjw.jaxb");
 
     // Create unmarshaller
     Unmarshaller unmarshaller = ctx.createUnmarshaller();

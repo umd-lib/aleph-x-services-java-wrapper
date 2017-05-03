@@ -1,4 +1,4 @@
-package edu.umd.lib.axsjw;
+package edu.umd.lib.axsjw.jaxb;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -19,13 +19,10 @@ public class ReadItemTest {
   @Before
   public void setUp() throws Exception {
     // Create context
-    JAXBContext ctx = JAXBContext.newInstance(ReadItem.class);
+    JAXBContext ctx = JAXBContext.newInstance("edu.umd.lib.axsjw.jaxb");
 
     // Create unmarshaller
     unmarshaller = ctx.createUnmarshaller();
-
-    MapAdapter mapAdapter = new MapAdapter();
-    unmarshaller.setAdapter(mapAdapter);
   }
 
   @After
