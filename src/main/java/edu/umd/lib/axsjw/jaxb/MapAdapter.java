@@ -15,7 +15,13 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-// See http://stackoverflow.com/questions/27182975/jaxb-unmarshal-elements-of-xml-to-map
+/**
+ * Converts XML nodes into a Map of with keys derived from the node name and
+ * values derived from the text values within the node.
+ *
+ * Source:
+ *   http://stackoverflow.com/questions/27182975/jaxb-unmarshal-elements-of-xml-to-map
+ */
 public class MapAdapter extends XmlAdapter<MapAdapter.AdaptedMap, Map<String, String>> {
 
   private DocumentBuilder documentBuilder;

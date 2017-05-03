@@ -4,7 +4,7 @@
 
 A Java client wrapper for Aleph X-Services
 
-This project is intended to provide a _thin_ wrapper around the Aleph X-services.
+This project is intended to provide a _thin_ Java wrapper around the Aleph X-services.
 
 ## Useful Resources
 
@@ -13,6 +13,20 @@ This project is intended to provide a _thin_ wrapper around the Aleph X-services
 ## Requirements
 
 * Java 1.7
+
+## Packages
+
+### edu.umd.lib.axsjw.jaxb
+
+Contains classes used by JAXB to unmarshal XML received from the Aleph X server into Java objects.
+
+### edu.umd.lib.axsjw.net
+
+Contains interfaces and classes handling network communications with the Aleph X Server. Uses the Jersey client for configuring and making network requests.
+
+### edu.umd.lib.axsjw.examples
+
+Provides simple examples of Aleph X-server interaction using this library.
 
 ## Test File Generation
 
