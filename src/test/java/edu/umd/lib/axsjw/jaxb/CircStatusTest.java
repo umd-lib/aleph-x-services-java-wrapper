@@ -33,7 +33,7 @@ public class CircStatusTest {
   }
 
   @Test
-  public void testValidResponsSingleItem() throws Exception {
+  public void testValidResponseSingleItem() throws Exception {
     URL testFileUrl = ClassLoader.getSystemResource("test-data/circ-status-valid-single-item.xml");
     File testFile = new File(testFileUrl.toURI());
 
