@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -19,7 +20,7 @@ public class MapAdapter extends XmlAdapter<MapAdapter.AdaptedMap, Map<String, St
 
   private DocumentBuilder documentBuilder;
 
-  public MapAdapter() throws Exception {
+  public MapAdapter() throws ParserConfigurationException {
     documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
   }
 
@@ -29,7 +30,7 @@ public class MapAdapter extends XmlAdapter<MapAdapter.AdaptedMap, Map<String, St
   }
 
   @Override
-  public AdaptedMap marshal(Map<String, String> map) throws Exception {
+  public AdaptedMap marshal(Map<String, String> map) {
     Document document = documentBuilder.newDocument();
     AdaptedMap adaptedMap = new AdaptedMap();
     for (Entry<String, String> entry : map.entrySet()) {
@@ -41,7 +42,7 @@ public class MapAdapter extends XmlAdapter<MapAdapter.AdaptedMap, Map<String, St
   }
 
   @Override
-  public Map<String, String> unmarshal(AdaptedMap adaptedMap) throws Exception {
+  public Map<String, String> unmarshal(AdaptedMap adaptedMap) {
     HashMap<String, String> map = new HashMap<String, String>();
     for (Element element : adaptedMap.elements) {
       map.put(element.getLocalName(), element.getTextContent());
