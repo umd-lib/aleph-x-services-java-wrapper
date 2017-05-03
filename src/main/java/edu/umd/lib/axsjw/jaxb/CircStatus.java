@@ -14,30 +14,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlRootElement(name = "circ-status")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class CircStatus {
-  @XmlElement(name = "session-id")
-  private String sessionId;
-
-  @XmlElement(name = "error")
-  private String error;
-
+public class CircStatus extends AbstractAlephOpResult {
   @XmlElement(name = "item-data")
   @XmlJavaTypeAdapter(MapAdapter.class)
   private Map<String, String>[] itemDataMaps;
-
-  /**
-   * @return the session id from the response.
-   */
-  public String getSessionId() {
-    return sessionId;
-  }
-
-  /**
-   * @return an error description provided by the Aleph X-Server.
-   */
-  public String getError() {
-    return error;
-  }
 
   /**
    * @return an array of Maps representing the "item-data" elements in the

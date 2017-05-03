@@ -1,7 +1,9 @@
 package edu.umd.lib.axsjw.jaxb;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.net.URL;
@@ -38,6 +40,8 @@ public class ReadItemTest {
 
     assertEquals("HYITNCE7LYPH46E8LXSFVUKVTR3NHIX8T1XCDTDYKUEV6PLNSG", readItem.getSessionId());
     assertEquals("32055660182979", readItem.getZ30Map().get("z30-barcode"));
+
+    assertFalse(readItem.isError());
     assertNull(readItem.getError());
   }
 
@@ -49,7 +53,10 @@ public class ReadItemTest {
     ReadItem readItem = (ReadItem) unmarshaller.unmarshal(testFile);
 
     assertEquals("X1171EES7FVN2GXC28JJQ9I62FQF2E5JVAD42M4NJN2UVMGV9L", readItem.getSessionId());
-    assertNull(readItem.getZ30Map());
+
+    assertTrue(readItem.isError());
     assertEquals("Item could not been found based on item barcode: BARCODE_DOES_NOT_EXIST.", readItem.getError());
+
+    assertNull(readItem.getZ30Map());
   }
 }

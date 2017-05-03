@@ -1,7 +1,9 @@
 package edu.umd.lib.axsjw.jaxb;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.net.URL;
@@ -43,6 +45,8 @@ public class CircStatusTest {
 
     Map<String, String> itemDataMap0 = itemDataMaps[0];
     assertEquals("On Shelf", itemDataMap0.get("due-date"));
+
+    assertFalse(circStatus.isError());
     assertNull(circStatus.getError());
   }
 
@@ -59,6 +63,8 @@ public class CircStatusTest {
 
     Map<String, String> itemDataMap0 = itemDataMaps[0];
     assertEquals("On Shelf", itemDataMap0.get("due-date"));
+
+    assertFalse(circStatus.isError());
     assertNull(circStatus.getError());
   }
 
@@ -70,8 +76,11 @@ public class CircStatusTest {
     CircStatus circStatus = (CircStatus) unmarshaller.unmarshal(testFile);
 
     assertEquals("HMUF2ATHT8FUFFULAPRTM3PS1LHSUX5QXVG853PPGXQCQF6F2A", circStatus.getSessionId());
-    assertNull(circStatus.getItemDataMaps());
+
+    assertTrue(circStatus.isError());
     assertEquals("Document: 999999999 doesn't exist in library: MAI01. Make sure you insert BIB library.",
         circStatus.getError());
+
+    assertNull(circStatus.getItemDataMaps());
   }
 }
