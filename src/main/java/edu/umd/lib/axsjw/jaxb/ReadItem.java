@@ -8,6 +8,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+/**
+ * JAXB class for converting XML returned by the "read-item" operation into a
+ * Java object.
+ */
 @XmlRootElement(name = "read-item")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ReadItem {
@@ -21,27 +25,25 @@ public class ReadItem {
   @XmlJavaTypeAdapter(MapAdapter.class)
   private Map<String, String> z30Map;
 
+  /**
+   * @return the session id from the response.
+   */
   public String getSessionId() {
     return sessionId;
   }
 
-  public void setSessionId(String sessionId) {
-    this.sessionId = sessionId;
-  }
-
+  /**
+   * @return an error description provided by the Aleph X-Server.
+   */
   public String getError() {
     return error;
   }
 
-  public void setError(String error) {
-    this.error = error;
-  }
-
+  /**
+   * @return an array of Maps representing the "item-data" elements in the
+   *         response.
+   */
   public Map<String, String> getZ30Map() {
     return z30Map;
-  }
-
-  public void setZ30Map(Map<String, String> z30Map) {
-    this.z30Map = z30Map;
   }
 }

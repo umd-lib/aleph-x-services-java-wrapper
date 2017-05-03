@@ -8,6 +8,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+/**
+ * JAXB class for converting XML returned by the "circ-status" operation into a
+ * Java object.
+ */
 @XmlRootElement(name = "circ-status")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class CircStatus {
@@ -21,28 +25,25 @@ public class CircStatus {
   @XmlJavaTypeAdapter(MapAdapter.class)
   private Map<String, String>[] itemDataMaps;
 
+  /**
+   * @return the session id from the response.
+   */
   public String getSessionId() {
     return sessionId;
   }
 
-  public void setSessionId(String sessionId) {
-    this.sessionId = sessionId;
-  }
-
+  /**
+   * @return an error description provided by the Aleph X-Server.
+   */
   public String getError() {
     return error;
   }
 
-  public void setError(String error) {
-    this.error = error;
-  }
-
+  /**
+   * @return an array of Maps representing the "item-data" elements in the
+   *         response.
+   */
   public Map<String, String>[] getItemDataMaps() {
     return itemDataMaps;
   }
-
-  public void setZ30Map(Map<String, String>[] itemDataMaps) {
-    this.itemDataMaps = itemDataMaps;
-  }
-
 }
