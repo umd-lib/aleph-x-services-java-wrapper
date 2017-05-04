@@ -14,6 +14,13 @@ This project is intended to provide a _thin_ Java wrapper around the Aleph X-ser
 
 * Java 1.7
 
+## Dependencies
+
+The code uses the following third-party jar:
+
+* jersey-client: Handles the actual network communication with the Aleph X-server
+* slf4j-api: For logging. See [https://www.slf4j.org/manual.html] for information about integrating with the logging tool of your choosing.
+
 ## Packages
 
 ### edu.umd.lib.axsjw.jaxb
@@ -56,3 +63,5 @@ curl 'http://[SERVER_NAME]/X?op=read-item&library=mai50&item_barcode=BARCODE_DOE
 ```
 curl 'http://[SERVER_NAME]/X?op=read-item&library=mai50&item_barcode=32055660182979'
 ```
+
+[https://www.slf4j.org/manual.html]: https://www.slf4j.org/manual.html
