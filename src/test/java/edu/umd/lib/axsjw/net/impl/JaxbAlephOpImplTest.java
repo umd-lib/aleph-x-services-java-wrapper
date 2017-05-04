@@ -73,7 +73,7 @@ public class JaxbAlephOpImplTest extends JerseyTest {
     Unmarshaller unmarshaller = ctx.createUnmarshaller();
 
     ReadItem readItem = alephOp.request(webTargetMock, queryParams, unmarshaller);
-    assertEquals("HYITNCE7LYPH46E8LXSFVUKVTR3NHIX8T1XCDTDYKUEV6PLNSG", readItem.getSessionId());
+    assertEquals("VT5QF4XVQ4QJE9SY166YXELPHJN8AH3MT6RVAVEEKKQ9BFR54F", readItem.getSessionId());
   }
 
   @Test

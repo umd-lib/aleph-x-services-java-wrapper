@@ -39,7 +39,7 @@ public class CircStatusTest {
 
     CircStatus circStatus = (CircStatus) unmarshaller.unmarshal(testFile);
 
-    assertEquals("MJGH1J27U7BG14HCNED7QX9D626UMUHVUHTXPVJN4SBRAJLMD5", circStatus.getSessionId());
+    assertEquals("PDGYYRDCJ6356XT6TLQU5KK48DKVAYVLGB9SS9JFBQEI4M8UCI", circStatus.getSessionId());
     Map<String, String>[] itemDataMaps = circStatus.getItemDataMaps();
     assertEquals(1, itemDataMaps.length);
 
@@ -57,7 +57,7 @@ public class CircStatusTest {
 
     CircStatus circStatus = (CircStatus) unmarshaller.unmarshal(testFile);
 
-    assertEquals("76G7MA6BPUG18PPLMLPS24P1UX69LRDSU62K1C5MSG3USC7LBN", circStatus.getSessionId());
+    assertEquals("V5Y84RLQ6QSSSR2GABI6M7FTMSJ24ESMIDT24XYF2UKMP8QYUI", circStatus.getSessionId());
     Map<String, String>[] itemDataMaps = circStatus.getItemDataMaps();
     assertEquals(2, itemDataMaps.length);
 
@@ -75,7 +75,7 @@ public class CircStatusTest {
 
     CircStatus circStatus = (CircStatus) unmarshaller.unmarshal(testFile);
 
-    assertEquals("HMUF2ATHT8FUFFULAPRTM3PS1LHSUX5QXVG853PPGXQCQF6F2A", circStatus.getSessionId());
+    assertEquals("D4UPE5LUKUFNUSBNH51A8NIYNSRKG6LFSJMN2YH9DQBVHGIKAR", circStatus.getSessionId());
 
     assertTrue(circStatus.isError());
     assertEquals("Document: 999999999 doesn't exist in library: MAI01. Make sure you insert BIB library.",

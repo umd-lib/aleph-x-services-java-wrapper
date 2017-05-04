@@ -38,7 +38,7 @@ public class ReadItemTest {
 
     ReadItem readItem = (ReadItem) unmarshaller.unmarshal(testFile);
 
-    assertEquals("HYITNCE7LYPH46E8LXSFVUKVTR3NHIX8T1XCDTDYKUEV6PLNSG", readItem.getSessionId());
+    assertEquals("VT5QF4XVQ4QJE9SY166YXELPHJN8AH3MT6RVAVEEKKQ9BFR54F", readItem.getSessionId());
     assertEquals("32055660182979", readItem.getZ30Map().get("z30-barcode"));
 
     assertFalse(readItem.isError());
@@ -52,7 +52,7 @@ public class ReadItemTest {
 
     ReadItem readItem = (ReadItem) unmarshaller.unmarshal(testFile);
 
-    assertEquals("X1171EES7FVN2GXC28JJQ9I62FQF2E5JVAD42M4NJN2UVMGV9L", readItem.getSessionId());
+    assertEquals("N8A9J13UBK6GJ79UDH35MDGNQUQ7BKPT2H4GPAYIYMTH49631E", readItem.getSessionId());
 
     assertTrue(readItem.isError());
     assertEquals("Item could not been found based on item barcode: BARCODE_DOES_NOT_EXIST.", readItem.getError());

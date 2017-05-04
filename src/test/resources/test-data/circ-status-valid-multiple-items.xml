@@ -5,7 +5,7 @@
 <loan-status>General coll.</loan-status>
 <due-date>On Shelf</due-date>
 <due-hour></due-hour>
-<sub-library>UMCP Art Library</sub-library>
+<sub-library>CPART</sub-library>
 <collection>Folio</collection>
 <location>ND623.M6 C58 1990</location>
 <pages></pages>
@@ -19,7 +19,7 @@
 <loan-status>General coll.</loan-status>
 <due-date>On Shelf</due-date>
 <due-hour></due-hour>
-<sub-library>St. Mary&apos;s College of Maryland</sub-library>
+<sub-library>SM-SM</sub-library>
 <collection>Oversize</collection>
 <location>ND623.M6 C58 1990</location>
 <pages></pages>
@@ -28,5 +28,5 @@
 <barcode>33127001186305</barcode>
 <opac-note></opac-note>
 </item-data>
-<session-id>76G7MA6BPUG18PPLMLPS24P1UX69LRDSU62K1C5MSG3USC7LBN</session-id>
+<session-id>V5Y84RLQ6QSSSR2GABI6M7FTMSJ24ESMIDT24XYF2UKMP8QYUI</session-id>
 </circ-status>

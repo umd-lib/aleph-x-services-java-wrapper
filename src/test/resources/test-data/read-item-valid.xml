@@ -1,24 +1,23 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
-<!-- curl 'http://[SERVER_NAME]/X?op=read-item&library=mai50&item_barcode=32055660182979' -->
 <read-item>
 <z30>
-<z30-doc-number>1834879</z30-doc-number>
-<z30-item-sequence>10</z30-item-sequence>
+<z30-doc-number>001834879</z30-doc-number>
+<z30-item-sequence>000010</z30-item-sequence>
 <z30-barcode>32055660182979</z30-barcode>
-<z30-sub-library>Towson University</z30-sub-library>
-<z30-material>Book</z30-material>
-<z30-item-status>General coll.</z30-item-status>
-<z30-open-date>06/21/2000</z30-open-date>
-<z30-update-date></z30-update-date>
+<z30-sub-library>TU-TU</z30-sub-library>
+<z30-material>BOOK</z30-material>
+<z30-item-status>01</z30-item-status>
+<z30-open-date>20000621</z30-open-date>
+<z30-update-date>00000000</z30-update-date>
 <z30-cataloger></z30-cataloger>
-<z30-date-last-return>10/17/2013</z30-date-last-return>
-<z30-hour-last-return>07:26 PM</z30-hour-last-return>
+<z30-date-last-return>20131017</z30-date-last-return>
+<z30-hour-last-return>1926</z30-hour-last-return>
 <z30-ip-last-return>136.160.157.126</z30-ip-last-return>
 <z30-no-loans>010</z30-no-loans>
 <z30-alpha>L</z30-alpha>
-<z30-collection>Juvenile Fiction - 4th floor</z30-collection>
+<z30-collection>JVFIC</z30-collection>
 <z30-call-no-type></z30-call-no-type>
-<z30-call-no>.B16765hi</z30-call-no>
+<z30-call-no>$$h.B16765hi</z30-call-no>
 <z30-call-no-key>.B16765-HI</z30-call-no-key>
 <z30-call-no-2-type></z30-call-no-2-type>
 <z30-call-no-2></z30-call-no-2>
@@ -29,7 +28,7 @@
 <z30-note-internal></z30-note-internal>
 <z30-order-number></z30-order-number>
 <z30-inventory-number></z30-inventory-number>
-<z30-inventory-number-date></z30-inventory-number-date>
+<z30-inventory-number-date>00000000</z30-inventory-number-date>
 <z30-last-shelf-report-date>00000000</z30-last-shelf-report-date>
 <z30-price></z30-price>
 <z30-shelf-report-number></z30-shelf-report-number>
@@ -42,14 +41,14 @@
 <z30-invoice-number></z30-invoice-number>
 <z30-line-number>00000</z30-line-number>
 <z30-pages></z30-pages>
-<z30-issue-date></z30-issue-date>
-<z30-expected-arrival-date></z30-expected-arrival-date>
-<z30-arrival-date></z30-arrival-date>
+<z30-issue-date>00000000</z30-issue-date>
+<z30-expected-arrival-date>00000000</z30-expected-arrival-date>
+<z30-arrival-date>00000000</z30-arrival-date>
 <z30-item-statistic></z30-item-statistic>
 <z30-item-process-status></z30-item-process-status>
 <z30-copy-id></z30-copy-id>
 <z30-hol-doc-number>001488359</z30-hol-doc-number>
-<z30-temp-location>No</z30-temp-location>
+<z30-temp-location>N</z30-temp-location>
 <z30-enumeration-a></z30-enumeration-a>
 <z30-enumeration-b></z30-enumeration-b>
 <z30-enumeration-c></z30-enumeration-c>
@@ -73,5 +72,5 @@
 <z30-upd-time-stamp>200001011200000</z30-upd-time-stamp>
 <z30-ip-last-return-v6></z30-ip-last-return-v6>
 </z30>
-<session-id>HYITNCE7LYPH46E8LXSFVUKVTR3NHIX8T1XCDTDYKUEV6PLNSG</session-id>
+<session-id>VT5QF4XVQ4QJE9SY166YXELPHJN8AH3MT6RVAVEEKKQ9BFR54F</session-id>
 </read-item>
