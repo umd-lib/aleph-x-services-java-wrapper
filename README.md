@@ -185,4 +185,9 @@ curl 'http://[SERVER_NAME]/X?op=read-item&library=mai50&item_barcode=BARCODE_DOE
 curl 'http://[SERVER_NAME]/X?op=read-item&library=mai50&item_barcode=32055660182979&translate=N'
 ```
 
+## License
+
+This code is released under Apache License v2.0. See [LICENSE] for more information.
+
 [https://www.slf4j.org/manual.html]: https://www.slf4j.org/manual.html
+[LICENSE]: LICENSE
