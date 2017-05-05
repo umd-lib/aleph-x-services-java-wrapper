@@ -23,6 +23,7 @@ public class JaxbAlephOpImpl<T> implements JaxbAlephOp<T> {
   }
 
   @Override
+  @SuppressWarnings("unchecked")
   public T request(WebTarget webTarget, Map<String, String> queryParams, Unmarshaller unmarshaller)
       throws JAXBException {
     String xml = request(webTarget, queryParams);
