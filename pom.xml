@@ -8,7 +8,7 @@
   <packaging>jar</packaging>
   <version>0.1.0-SNAPSHOT</version>
   <name>aleph-x-services-java-wrapper</name>
-  <description>Java wrapper for Aleph X-Server operations</description>
+  <description>Java wrapper for Aleph X-Services operations</description>
   <url>https://github.com/umd-lib/aleph-x-services-java-wrapper</url>
 
   <licenses>
