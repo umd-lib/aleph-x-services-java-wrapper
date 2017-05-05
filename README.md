@@ -27,6 +27,8 @@ The code uses the following third-party jar:
 
 Contains classes used by JAXB to unmarshal XML received from the Aleph X server into Java objects.
 
+**Note:** When adding JAXB-annotated classes to this package, be sure to update the src/main/resources/edu/umd/lib/axsjw/jaxb/jaxb.index file, so that the JAXBContext class can auto-discover them.
+
 ### edu.umd.lib.axsjw.net
 
 Contains interfaces and classes handling network communications with the Aleph X Server. Uses the Jersey client for configuring and making network requests.
