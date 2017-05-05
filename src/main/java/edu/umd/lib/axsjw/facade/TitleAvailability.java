@@ -36,8 +36,10 @@ public class TitleAvailability {
    * @param webTarget
    *          the WebTarget describing the network connection to the Aleph
    *          X-Server
-   * @param library
+   * @param admLibrary
    *          the ADM library to search for the title
+   * @param bibLibrary
+   *          the BIB library to search for the availability
    * @param subLibrary
    *          the subLibrary location where items must be available. Should not
    *          be null.
@@ -49,12 +51,13 @@ public class TitleAvailability {
    * @return a TitleAvailabilityResult containing information about the
    *         availability of a title with the given barcodes.
    */
-  public TitleAvailabilityResult getAvailability(WebTarget webTarget, String library, String subLibrary,
+  public TitleAvailabilityResult getAvailability(WebTarget webTarget, String admLibrary, String bibLibrary,
+      String subLibrary,
       String collection, String[] barcodes) {
     TitleAvailabilityResult currentResult = new TitleAvailabilityResult();
 
     for (String barcode : barcodes) {
-      ReadItem readItem = getReadItem(webTarget, library, barcode);
+      ReadItem readItem = getReadItem(webTarget, admLibrary, barcode);
 
       if (readItem == null) {
         continue;
@@ -64,7 +67,7 @@ public class TitleAvailability {
         Map<String, String> z30Map = readItem.getZ30Map();
         String sysNum = padSysNum(z30Map.get("z30-doc-number"));
 
-        CircStatus circStatus = getCircStatus(webTarget, library, sysNum);
+        CircStatus circStatus = getCircStatus(webTarget, bibLibrary, sysNum);
 
         if (circStatus == null) {
           continue;
@@ -167,25 +170,26 @@ public class TitleAvailability {
    * @return a ReadItem object from the Aleph X-Server using the given
    *         parameters, or null if an error occurs.
    */
-  protected ReadItem getReadItem(WebTarget webTarget, String library, String barcode) {
+  protected ReadItem getReadItem(WebTarget webTarget, String admLibrary, String barcode) {
     try {
-      logger.debug("Calling read-item for library: {}, barcode: {}", library, barcode);
+      logger.debug("Calling read-item for admLibrary: {}, barcode: {}", admLibrary, barcode);
       Map<String, String> queryParams = new HashMap<>();
       queryParams.put("op", "read-item");
-      queryParams.put("library", library);
+      queryParams.put("library", admLibrary);
       queryParams.put("item_barcode", barcode);
+      queryParams.put("translate", "N");
 
       Unmarshaller unmarshaller = ctx.createUnmarshaller();
       JaxbAlephOp<ReadItem> readItemOp = new JaxbAlephOpImpl<>();
       ReadItem readItem = readItemOp.request(webTarget, queryParams, unmarshaller);
       if (readItem.isError()) {
-        logger.error("Error retrieving read-item, library='{}', barcode='{}', error={}", library, barcode,
+        logger.error("Error retrieving read-item, library='{}', barcode='{}', error={}", admLibrary, barcode,
             readItem.getError());
         return null;
       }
       return readItem;
     } catch (JAXBException jaxbe) {
-      logger.error("JAXBError: Calling read-item, library='" + library + "', barcode='" + barcode + "'", jaxbe);
+      logger.error("JAXBError: Calling read-item, library='" + admLibrary + "', barcode='" + barcode + "'", jaxbe);
     }
     return null;
   }
@@ -198,33 +202,34 @@ public class TitleAvailability {
    *          the WebTarget describing the network connection to the Aleph
    *          X-Server
    * @param library
-   *          the ADM library of the item requested to be retrieved
+   *          the BIB library of the item requested to be retrieved
    * @param sysNum
    *          document for which the user would like to retrieve circulation
    *          information.
    * @return a CircStatus object from the Aleph X-Server using the given
    *         parameters, or null if an error occurs.
    */
-  protected CircStatus getCircStatus(WebTarget webTarget, String library, String sysNum) {
+  protected CircStatus getCircStatus(WebTarget webTarget, String bibLibrary, String sysNum) {
     try {
-      logger.debug("Calling circ-status for library: {}, sysNum: {}", library, sysNum);
+      logger.debug("Calling circ-status for library: {}, sysNum: {}", bibLibrary, sysNum);
       Map<String, String> queryParams = new HashMap<>();
       queryParams.put("op", "circ-status");
-      queryParams.put("library", library);
+      queryParams.put("library", bibLibrary);
       queryParams.put("sys_no", sysNum);
+      queryParams.put("translate", "N");
 
       Unmarshaller unmarshaller = ctx.createUnmarshaller();
       JaxbAlephOp<CircStatus> circStatusOp = new JaxbAlephOpImpl<>();
       CircStatus circStatus = circStatusOp.request(webTarget, queryParams, unmarshaller);
       if (circStatus.isError()) {
-        logger.error("Error retrieving circ-status, library='{}', sysNum='{}', error={}", library, sysNum,
+        logger.error("Error retrieving circ-status, library='{}', sys_no='{}', error={}", bibLibrary, sysNum,
             circStatus.getError());
         return null;
       }
       return circStatus;
 
     } catch (JAXBException jaxbe) {
-      logger.error("JAXBError: Calling circ-status, library='" + library + "', sysNum='" + sysNum + "'", jaxbe);
+      logger.error("JAXBError: Calling circ-status, library='" + bibLibrary + "', sys_no='" + sysNum + "'", jaxbe);
     }
     return null;
   }

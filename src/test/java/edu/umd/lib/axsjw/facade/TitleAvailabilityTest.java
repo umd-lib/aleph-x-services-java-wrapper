@@ -48,7 +48,7 @@ public class TitleAvailabilityTest {
     CircStatus validCircStatus = getCircStatusFromTestFile("test-data/circ-status-valid-single-item.xml");
 
     TitleAvailability titleAvailability = mockTitleAvailability(validReadItem, validCircStatus);
-    TitleAvailabilityResult result = titleAvailability.getAvailability(null, "mai01", "TU-TU", "JVFIC",
+    TitleAvailabilityResult result = titleAvailability.getAvailability(null, "mai50", "mai01", "TU-TU", "JVFIC",
         new String[] { barcode });
     assertEquals(1, result.getNumAvailable());
 
@@ -66,7 +66,7 @@ public class TitleAvailabilityTest {
     validCircStatus.getItemDataMaps()[0].put("due-hour", "06:53 PM");
 
     TitleAvailability titleAvailability = mockTitleAvailability(validReadItem, validCircStatus);
-    TitleAvailabilityResult result = titleAvailability.getAvailability(null, "mai01", "TU-TU", "JVFIC",
+    TitleAvailabilityResult result = titleAvailability.getAvailability(null, "mai50", "mai01", "TU-TU", "JVFIC",
         new String[] { barcode });
     assertEquals(0, result.getNumAvailable());
     assertEquals("April-25-2017", result.getDueDate());
@@ -81,7 +81,7 @@ public class TitleAvailabilityTest {
     CircStatus validCircStatus = getCircStatusFromTestFile("test-data/circ-status-valid-single-item.xml");
 
     TitleAvailability titleAvailability = mockTitleAvailability(badReadItem, validCircStatus);
-    TitleAvailabilityResult result = titleAvailability.getAvailability(null, "mai01", "TU-TU", "JVFIC",
+    TitleAvailabilityResult result = titleAvailability.getAvailability(null, "mai50", "mai01", "TU-TU", "JVFIC",
         new String[] { barcode });
     assertEquals(0, result.getNumAvailable());
     assertNull(result.getDueDate());
@@ -96,7 +96,7 @@ public class TitleAvailabilityTest {
     CircStatus validCircStatus = getCircStatusFromTestFile("test-data/circ-status-error-item-not-found.xml");
 
     TitleAvailability titleAvailability = mockTitleAvailability(badReadItem, validCircStatus);
-    TitleAvailabilityResult result = titleAvailability.getAvailability(null, "mai01", "TU-TU", "JVFIC",
+    TitleAvailabilityResult result = titleAvailability.getAvailability(null, "mai50", "mai01", "TU-TU", "JVFIC",
         new String[] { barcode });
     assertEquals(0, result.getNumAvailable());
     assertNull(result.getDueDate());
