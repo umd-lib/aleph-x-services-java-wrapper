@@ -20,20 +20,20 @@ import edu.umd.lib.axsjw.net.impl.JaxbAlephOpImpl;
  * Example code demonstrating calling the "circ-status" operation on an Aleph
  * X-server.
  * <p>
- * Note: Please change the SERVER_URL, LIBRARY, and SYS_NO to appropriate values
- * for your Aleph installation before running this example.
+ * Note: Please change the SERVER_URL, BIB_LIBRARY, and SYS_NO to appropriate
+ * values for your Aleph installation before running this example.
  */
 public class CircStatusExample {
   public static final void main(String[] args) {
     // The URL to the Aleph X-Server
-    String SERVER_URL = "http://alephdev.lib.umd.edu/X";
+    String SERVER_URL = "http://aleph.lib.example.edu/X";
 
-    // The ADM library of the item requested to be retrieved
-    String LIBRARY = "mai01";
+    // The BIB library of the item requested to be retrieved
+    String BIB_LIBRARY = "mai01";
 
     // The document for which the user would like to retrieve circulation
     // information.
-    String SYS_NO = "004572025";
+    String SYS_NO = "123456789";
 
     Client client = ClientBuilder.newClient(new ClientConfig());
     WebTarget webTarget = client.target(SERVER_URL);
@@ -49,7 +49,7 @@ public class CircStatusExample {
       Map<String, String> params = new HashMap<>();
       params.put("op", "circ-status");
       params.put("sys_no", SYS_NO);
-      params.put("library", LIBRARY);
+      params.put("library", BIB_LIBRARY);
 
       // Perform "circ-status" operation
       JaxbAlephOp<CircStatus> opCircStatus = new JaxbAlephOpImpl<>();

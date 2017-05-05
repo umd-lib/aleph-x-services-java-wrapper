@@ -20,19 +20,19 @@ import edu.umd.lib.axsjw.net.impl.JaxbAlephOpImpl;
  * Example code demonstrating calling the "read-item" operation on an Aleph
  * X-server.
  * <p>
- * Note: Please change the SERVER_URL, LIBRARY, and ITEM_BARCODE to appropriate
- * values for your Aleph installation before running this example.
+ * Note: Please change the SERVER_URL, ADM_LIBRARY, and ITEM_BARCODE to
+ * appropriate values for your Aleph installation before running this example.
  */
 public class ReadItemExample {
   public static final void main(String[] args) {
     // The URL to the Aleph X-Server
-    String SERVER_URL = "http://alephdev.lib.umd.edu/X";
+    String SERVER_URL = "http://aleph.lib.example.edu/X";
 
     // The ADM library of the item requested to be retrieved
-    String LIBRARY = "mai50";
+    String ADM_LIBRARY = "mai50";
 
     // A unique identifier of a single item within the ADM library.
-    String ITEM_BARCODE = "31430058252679";
+    String ITEM_BARCODE = "12345678901234";
 
     Client client = ClientBuilder.newClient(new ClientConfig());
     WebTarget webTarget = client.target(SERVER_URL);
@@ -48,7 +48,7 @@ public class ReadItemExample {
       Map<String, String> params = new HashMap<>();
       params.put("op", "read-item");
       params.put("item_barcode", ITEM_BARCODE);
-      params.put("library", LIBRARY);
+      params.put("library", ADM_LIBRARY);
 
       // Perform "read-item" operation
       JaxbAlephOp<ReadItem> opReadItem = new JaxbAlephOpImpl<>();
