@@ -14,7 +14,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<maven.compiler.source>1.7</maven.compiler.source>
   	<maven.compiler.target>1.7</maven.compiler.target>
-    <slf4j.version>1.7.6</slf4j.version>
+    <jersey-client.version>2.25.1</jersey-client.version>
+    <junit.version>4.12</junit.version>
+    <jersey-test-framework-provider-inmemory.version>2.25.1</jersey-test-framework-provider-inmemory.version>
+    <mockito-core.version>2.7.22</mockito-core.version>
   </properties>
 
   <dependencies>
@@ -22,34 +25,28 @@
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>
       <artifactId>jersey-client</artifactId>
-      <version>2.25.1</version>
-    </dependency>
-    
-    <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>${slf4j.version}</version>
+      <version>${jersey-client.version}</version>
     </dependency>
 
     <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     
     <dependency>
       <groupId>org.glassfish.jersey.test-framework.providers</groupId>
       <artifactId>jersey-test-framework-provider-inmemory</artifactId>
-      <version>2.25.1</version>
+      <version>${jersey-test-framework-provider-inmemory.version}</version>
       <scope>test</scope>
     </dependency>
     
     <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>2.7.22</version>
+        <version>${mockito-core.version}</version>
         <scope>test</scope>
     </dependency>
   </dependencies>
