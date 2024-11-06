@@ -1,5 +1,8 @@
 # aleph-x-services-java-wrapper
 
+> [!NOTE]
+> This repository is archived and no longer maintained.
+
 ## Introduction
 
 A Java client wrapper for Aleph X-Services API
